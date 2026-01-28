@@ -1,8 +1,10 @@
 import { useState } from 'react'
 import './index.css';
 // import { Router, Routes, Route } from 'react-router-dom';
-import Dashboard from './pages/Dashboard';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Dashboard from './pages/Dasboard';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import Transactions from './pages/Tansactions';
+import DashboardLayout from './layouts/DashboardLayout';
 
 function App() {
 
@@ -10,7 +12,13 @@ function App() {
     <>
       <Router>
         <Routes>
-          <Route path="/" element={<Dashboard/>} />
+          <Route path='/' element={<DashboardLayout/>}>
+            <Route path="/" element={<Dashboard/>} />
+            <Route path='transactions' element={<Transactions/>}/>
+          </Route>
+          
+          {/* Redirection si la page n'existe pas */}
+          <Route path="*" element={<Navigate to='/'/>} />
         </Routes>
       </Router>
     </>
