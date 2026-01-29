@@ -2,6 +2,7 @@ import { CreditCard, Droplets, Send, Tv, Wallet, Zap } from 'lucide-react';
 import StatsCard from '../components/StatsCard';
 import '../index.css'
 import MainChart from '../components/MainChart';
+import TransactionList from '../components/TransactionList';
 
 
 const Dashboard = () =>{
@@ -45,6 +46,23 @@ const Dashboard = () =>{
                     <MainChart/>
                 </div>
 
+                <div className='grid grid-cols-1 lg:grid-cols-3 gap-8 mt-8'>
+                    <div className='lg:col-span-2'>
+                        <TransactionList/>
+                    </div>
+
+                    <div className='space-y-8 mt-10'>
+                        <div className='bg-gradient-to-br dark:from-red-500  from-blue-600 to-indigo-700 p-6 rounded-3xl text-white shadow-xl'>
+                            <p className='text-blue-100 text-sm opacity-80'>Solde Total disponible</p>
+                            <h2 className='text-3xl font-bold mt-1'>2 450 000 XAF</h2>
+                            <div className='mt-8 flex justify-between items-end'>
+                                <div className='text-sm'> **** **** **** 4482</div>
+                                <div className='font-bold'>VISA</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 {/* Actions Rapides  */}
                 <div className='mt-10'>
                     <h2 className='text-xl font-bold text-slate-900 dark:text-white mb-4'>Actions Rapides</h2>
@@ -63,32 +81,6 @@ const Dashboard = () =>{
                                 <div className={`${action.color} text-white p-4 rounded-2xl shadow-lg hover:scale-105 active:scale-105 transition-transform`}>{action.icon}</div>
                                 <span className='text-sm font-medium text-slate-600'>{action.label}</span>
                             </button>
-                        ))}
-                        
-                    </div>
-                </div>
-
-                {/* Tableau des transactions recentes  */}
-                <div className='mt-10 bg-white dark:border-none dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-100 p-6'>
-                    <h2 className='text-xl font-bold text-slate-900 dark:text-white mb-6'>Transactions Recentes</h2>
-                    <div className='space-y-4'>
-                        {[
-                            {name : 'Abonnement Netflix', date: '28 Jan 2026', amount: '-7 500 XAF', type: 'service'},
-                            {name : 'Depot MTN MoMo', date: '27 Jan 2026', amount: '+ 50 000 XAF', type: 'income'},
-                            {name : 'Facture ENEO', date: '26 Jan 2026', amount: '-22 300 XAF', type: 'bill'}
-                        ].map((t, i) => (
-                            <div 
-                                key={i}
-                                className='flex justify-between items-center p-3 hover:bg-slate-50 active:bg-slate-50 rounded-xl transition-colors'
-                            >
-                                <div>
-                                    <p className='font-semibold text-slate-800'>{t.name}</p>
-                                    <p className='text-xs text-slate-400'>{t.date}</p>
-                                </div>
-                                <span className={`font-bold ${t.amount.startsWith('+') ? 'text-emerald-500' : 'text-red-500'}`}>
-                                    {t.amount}
-                                </span>
-                            </div>
                         ))}
                         
                     </div>
