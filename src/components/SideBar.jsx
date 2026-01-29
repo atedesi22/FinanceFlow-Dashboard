@@ -10,7 +10,7 @@ const Sidebar = () => {
   ];
 
   return (
-    <div className="h-screen w-64 fixed top-0 left-0 bg-slate-900 text-white flex flex-col p-4 z-50">
+    <div className="h-screen w-64 top-0  bg-slate-900 text-white flex flex-col p-4 z-50">
       <div className="flex items-center gap-3 mb-10 px-2">
         <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center font-bold">F</div>
         <h1 className="text-xl font-bold">FinanceFlow</h1>
