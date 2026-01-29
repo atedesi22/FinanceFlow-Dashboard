@@ -1,4 +1,4 @@
-import { Wallet } from 'lucide-react';
+import { CreditCard, Droplets, Send, Tv, Wallet, Zap } from 'lucide-react';
 import StatsCard from '../components/StatsCard';
 import '../index.css'
 
@@ -24,6 +24,55 @@ const Dashboard = () =>{
                     {/* </div> */}
                     <div className='h-32 bg-white rounded-2xl shadow-sm border border-slate-100 p-6'>Card 2</div>
                     <div className='h-32 bg-white rounded-2xl shadow-sm border border-slate-100 p-6'>Card 3</div>
+                </div>
+
+                {/* Actions Rapides  */}
+                <div className='mt-10'>
+                    <h2 className='text-xl font-bold text-slate-900 mb-4'>Actions Rapides</h2>
+                    <div className='flex gap-4 overflow-x-auto pb-4'>
+                        {[
+                            {label : 'Transfert', icon : <Send/>, color: 'bg-orange-500'},
+                             {label : 'Electricite', icon : <Zap/>, color: 'bg-yellow-500'},
+                              {label : 'Television', icon : <Tv/>, color: 'bg-purple-500'},
+                               {label : 'Eau', icon : <Droplets/>, color: 'bg-blue-500'},
+                                {label : 'Abonnement', icon : <CreditCard/>, color: 'bg-pink-500'},
+                        ].map((action, i) => (
+                            <button
+                                key={i}
+                                className='flex flex-col items-center gap-2 min-w-[100px]'
+                            >
+                                <div className={`${action.color} text-white p-4 rounded-2xl shadow-lg hover:scale-105 active:scale-105 transition-transform`}>{action.icon}</div>
+                                <span className='text-sm font-medium text-slate-600'>{action.label}</span>
+                            </button>
+                        ))}
+                        
+                    </div>
+                </div>
+
+                {/* Tableau des transactions recentes  */}
+                <div className='mt-10 bg-white rounded-2xl shadow-sm border border-slate-100 p-6'>
+                    <h2 className='text-xl font-bold text-slate-900 mb-6'>Transactions Recentes</h2>
+                    <div className='space-y-4'>
+                        {[
+                            {name : 'Abonnement Netflix', date: '28 Jan 2026', amount: '-7 500 XAF', type: 'service'},
+                            {name : 'Depot MTN MoMo', date: '27 Jan 2026', amount: '+ 50 000 XAF', type: 'income'},
+                            {name : 'Facture ENEO', date: '26 Jan 2026', amount: '-22 300 XAF', type: 'bill'}
+                        ].map((t, i) => (
+                            <div 
+                                key={i}
+                                className='flex justify-between items-center p-3 hover:bg-slate-50 active:bg-slate-50 rounded-xl transition-colors'
+                            >
+                                <div>
+                                    <p className='font-semibold text-slate-800'>{t.name}</p>
+                                    <p className='text-xs text-slate-400'>{t.date}</p>
+                                </div>
+                                <span className={`font-bold ${t.amount.startsWith('+') ? 'text-emerald-500' : 'text-slate-900'}`}>
+                                    {t.amount}
+                                </span>
+                            </div>
+                        ))}
+                        
+                    </div>
                 </div>
             </div>
         </>
