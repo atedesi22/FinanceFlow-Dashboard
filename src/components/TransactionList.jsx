@@ -29,7 +29,7 @@ const TransactionList = () => {
             </div>
             
             <div className="text-right">
-              <p className={`font-bold ${t.type === 'income' ? 'text-emerald-500' : 'text-slate-900 dark:text-white'}`}>
+              <p className={`font-bold ${t.type === 'income' ? 'text-emerald-500' : 'text-red-500 dark:text-white'}`}>
                 {t.amount} XAF
               </p>
               <p className={`text-[10px] font-medium px-2 py-0.5 rounded-full inline-block ${t.status === 'En attente' ? 'bg-amber-100 text-amber-600' : 'bg-slate-100 text-slate-500'}`}>

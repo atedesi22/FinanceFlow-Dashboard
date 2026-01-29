@@ -15,11 +15,11 @@ const Dashboard = () =>{
                 </header>
 
                 {/* Cartes de Statistiques */}
-                <div className='grid grid-cols-1 md:grid-cols-3 gap-6'>
+                <div className='grid grid-cols-2 md:grid-cols-3 gap-6'>
                     {/* <div className='h-32 bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-100 p-6'> */}
                         <StatsCard
                             title='Solde Total'
-                            amount='2 45 000 XAF'
+                            amount='2 450 000 XAF'
                             trend={12.5}
                             color='bg-blue-600 text-white'
                             icon={<Wallet size={24}/>}
@@ -39,28 +39,6 @@ const Dashboard = () =>{
                         color="bg-rose-500 text-white"
                         icon={<CreditCard size={24} />} 
                     /> 
-                </div>
-
-                {/* Graphiques d'analyses  */}
-                <div className='mt-10'>
-                    <MainChart/>
-                </div>
-
-                <div className='grid grid-cols-1 lg:grid-cols-3 gap-8 mt-8'>
-                    <div className='lg:col-span-2'>
-                        <TransactionList/>
-                    </div>
-
-                    <div className='space-y-8 mt-10'>
-                        <div className='bg-gradient-to-br dark:from-red-500  from-blue-600 to-indigo-700 p-6 rounded-3xl text-white shadow-xl'>
-                            <p className='text-blue-100 text-sm opacity-80'>Solde Total disponible</p>
-                            <h2 className='text-3xl font-bold mt-1'>2 450 000 XAF</h2>
-                            <div className='mt-8 flex justify-between items-end'>
-                                <div className='text-sm'> **** **** **** 4482</div>
-                                <div className='font-bold'>VISA</div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
 
                 {/* Actions Rapides  */}
@@ -85,6 +63,30 @@ const Dashboard = () =>{
                         
                     </div>
                 </div>
+
+                {/* Graphiques d'analyses  */}
+                <div className='mt-10'>
+                    <MainChart/>
+                </div>
+
+                <div className='grid grid-cols-1 lg:grid-cols-3 gap-8 mt-8'>
+                    <div className='lg:col-span-2'>
+                        <TransactionList/>
+                    </div>
+
+                    <div className='space-y-8 mt-10'>
+                        <div className='bg-gradient-to-br dark:from-red-500  from-blue-600 to-indigo-700 p-6 rounded-3xl text-white shadow-xl'>
+                            <p className='text-blue-100 text-sm opacity-80'>Solde Total disponible</p>
+                            <h2 className='text-3xl font-bold mt-1'>2 450 000 XAF</h2>
+                            <div className='mt-8 flex justify-between items-end'>
+                                <div className='text-sm'> **** **** **** 4482</div>
+                                <div className='font-bold'>VISA</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                
             </div>
         </>
     )
