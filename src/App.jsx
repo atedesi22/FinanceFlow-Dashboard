@@ -5,7 +5,7 @@ import Dashboard from './pages/Dasboard';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Transactions from './pages/Tansactions';
 import DashboardLayout from './layouts/DashboardLayout';
-import Transfer from './pages/Transfer';
+import Transfert from './pages/Transfer';
 
 function App() {
 
@@ -16,7 +16,7 @@ function App() {
           <Route path='/' element={<DashboardLayout/>}>
             <Route path="/" element={<Dashboard/>} />
             <Route path='transactions' element={<Transactions/>}/>
-            <Route path="transfer" element={<Transfer />} />
+            <Route path="transfer" element={<Transfert />} />
           </Route>
           
           {/* Redirection si la page n'existe pas */}
