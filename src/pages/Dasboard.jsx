@@ -9,13 +9,13 @@ const Dashboard = () =>{
         <>
             <div className="max-w-6xl mx-auto">
                 <header className='mb-8'>
-                    <h1 className='text-2xl font-bold text-slate-900'>Bienvenue, Paul Emmanuel 👋</h1>
+                    <h1 className='text-2xl font-bold text-slate-900 dark:text-white'>Bienvenue, Paul Emmanuel 👋</h1>
                     <p className='text-slate-500'>Voici le résumé de vos activités financières aujourd'hui.</p>
                 </header>
 
                 {/* Cartes de Statistiques */}
                 <div className='grid grid-cols-1 md:grid-cols-3 gap-6'>
-                    {/* <div className='h-32 bg-white rounded-2xl shadow-sm border border-slate-100 p-6'> */}
+                    {/* <div className='h-32 bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-100 p-6'> */}
                         <StatsCard
                             title='Solde Total'
                             amount='2 45 000 XAF'
@@ -47,7 +47,7 @@ const Dashboard = () =>{
 
                 {/* Actions Rapides  */}
                 <div className='mt-10'>
-                    <h2 className='text-xl font-bold text-slate-900 mb-4'>Actions Rapides</h2>
+                    <h2 className='text-xl font-bold text-slate-900 dark:text-white mb-4'>Actions Rapides</h2>
                     <div className='flex gap-4 overflow-x-auto pb-4'>
                         {[
                             {label : 'Transfert', icon : <Send/>, color: 'bg-orange-500'},
@@ -69,8 +69,8 @@ const Dashboard = () =>{
                 </div>
 
                 {/* Tableau des transactions recentes  */}
-                <div className='mt-10 bg-white rounded-2xl shadow-sm border border-slate-100 p-6'>
-                    <h2 className='text-xl font-bold text-slate-900 mb-6'>Transactions Recentes</h2>
+                <div className='mt-10 bg-white dark:border-none dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-100 p-6'>
+                    <h2 className='text-xl font-bold text-slate-900 dark:text-white mb-6'>Transactions Recentes</h2>
                     <div className='space-y-4'>
                         {[
                             {name : 'Abonnement Netflix', date: '28 Jan 2026', amount: '-7 500 XAF', type: 'service'},

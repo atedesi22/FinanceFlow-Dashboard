@@ -16,8 +16,8 @@ const data = [
 const MainChart = () => {
     return(
         // <>
-        //     <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 h-[400px]">
-        //         <h2 className='text-xl font-bold text-slate-900 mb-6'>Flux de tresorerie (XAF)</h2>
+        //     <div className="bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm border border-slate-100 h-[400px]">
+        //         <h2 className='text-xl font-bold text-slate-900 dark:text-white mb-6'>Flux de tresorerie (XAF)</h2>
         //         <ResponsiveContainer width='100%' height='100%'>
         //             <AreaChart data={data} margi={{ top:10, right:30, left:0, bottom:0}}/>
         //             {/* <defs>
@@ -38,8 +38,8 @@ const MainChart = () => {
         // </>
 
         <>
-            <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 h-[400px] w-full">
-      <h2 className="text-xl font-bold text-slate-900 mb-6">Flux de Trésorerie (XAF)</h2>
+            <div className="bg-white dark:border-none dark:bg-slate-800 p-6 rounded-2xl shadow-sm border border-slate-100 h-[400px] w-full">
+      <h2 className="text-xl font-bold text-slate-900 dark:text-white mb-6">Flux de Trésorerie (XAF)</h2>
       <ResponsiveContainer width="100%" height="100%">
         <AreaChart data={data} margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
           <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f1f5f9" />

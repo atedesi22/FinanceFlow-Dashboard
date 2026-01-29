@@ -11,7 +11,7 @@ const DashboardLayout = () =>{
 
     return(
         <>
-            <div className="min-h-screen bg-slate-50 flex flex-row">
+            <div className="min-h-screen bg-white dark:bg-slate-950  flex flex-row">
                 {/* Sidebar visible SEULEMENT sur grand écran */}
                 <div className="hidden lg:block w-64 h-screen sticky top-0 bg-slate-900">
                     <Sidebar />

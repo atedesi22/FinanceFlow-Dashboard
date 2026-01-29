@@ -7,7 +7,7 @@ const StatsCard = ({ title, amount, trend, icon, color}) =>{
 
     return(
         <>
-            <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:shadow-sm active:shadow-sm transition-shadow">
+            <div className="bg-white dark:border-none dark:bg-slate-800 p-6 rounded-2xl shadow-sm border border-slate-100 hover:shadow-sm active:shadow-sm transition-shadow">
                 <div className="flex justify-between items-start mb-4">
                     <div className={`p-3 rounded-xl ${color} bg-opacity-10 text-opacity-100`}>
                         {icon}
@@ -20,7 +20,7 @@ const StatsCard = ({ title, amount, trend, icon, color}) =>{
 
                 <div>
                     <p className="text-slate-500 text-sm font-medium">{title}</p>
-                    <h3 className="text-2xl font-bold text-slate-900 mt-1">{amount}</h3>
+                    <h3 className="text-2xl font-bold text-slate-900 dark:text-white mt-1">{amount}</h3>
                 </div>
             </div>
         </>
