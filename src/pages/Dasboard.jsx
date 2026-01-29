@@ -28,20 +28,20 @@ const Dashboard = () =>{
                         title="Revenus" 
                         amount="850 000 XAF" 
                         trend={8.2} 
-                        color="bg-emerald-500 text-emerald-500"
+                        color="bg-emerald-500 text-white"
                         icon={<Send size={24} />} 
                     />
                     <StatsCard 
                         title="Dépenses" 
                         amount="320 000 XAF" 
                         trend={-4.1} 
-                        color="bg-rose-500 text-rose-500"
+                        color="bg-rose-500 text-white"
                         icon={<CreditCard size={24} />} 
                     /> 
                 </div>
 
                 {/* Graphiques d'analyses  */}
-                <div className='mb-10'>
+                <div className='mt-10'>
                     <MainChart/>
                 </div>
 
@@ -85,7 +85,7 @@ const Dashboard = () =>{
                                     <p className='font-semibold text-slate-800'>{t.name}</p>
                                     <p className='text-xs text-slate-400'>{t.date}</p>
                                 </div>
-                                <span className={`font-bold ${t.amount.startsWith('+') ? 'text-emerald-500' : 'text-slate-900'}`}>
+                                <span className={`font-bold ${t.amount.startsWith('+') ? 'text-emerald-500' : 'text-red-500'}`}>
                                     {t.amount}
                                 </span>
                             </div>
