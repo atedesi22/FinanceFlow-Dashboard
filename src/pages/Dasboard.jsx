@@ -46,7 +46,7 @@ const Dashboard = () =>{
                     <h2 className='text-xl font-bold text-slate-900 dark:text-white mb-4'>Actions Rapides</h2>
                     <div className='flex gap-4 overflow-x-auto pb-4'>
                         {[
-                            {label : 'Transfert', path:'transfer', icon : <Send/>, color: 'bg-orange-500'},
+                            {label : 'Transfert', path:'transfert', icon : <Send/>, color: 'bg-orange-500'},
                              {label : 'Electricite', path:'/', icon : <Zap/>, color: 'bg-yellow-500'},
                               {label : 'Television', path:'/', icon : <Tv/>, color: 'bg-purple-500'},
                                {label : 'Eau', path:'/', icon : <Droplets/>, color: 'bg-blue-500'},

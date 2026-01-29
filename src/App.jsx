@@ -16,7 +16,7 @@ function App() {
           <Route path='/' element={<DashboardLayout/>}>
             <Route path="/" element={<Dashboard/>} />
             <Route path='transactions' element={<Transactions/>}/>
-            <Route path="transfer" element={<Transfert />} />
+            <Route path="transfert" element={<Transfert />} />
           </Route>
           
           {/* Redirection si la page n'existe pas */}
