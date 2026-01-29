@@ -2,11 +2,11 @@ import { LayoutDashboard, Wallet, ArrowUpRight, ArrowDownLeft, Settings, LogOut 
 
 const Sidebar = () => {
   const menuItems = [
-    { icon: <LayoutDashboard size={20} />, label: 'Dashboard', active: true },
-    { icon: <Wallet size={20} />, label: 'Mes Comptes', active: false },
-    { icon: <ArrowUpRight size={20} />, label: 'Revenus', active: false },
-    { icon: <ArrowDownLeft size={20} />, label: 'Dépenses', active: false },
-    { icon: <Settings size={20} />, label: 'Paramètres', active: false },
+    { icon: <LayoutDashboard size={20} />, label: 'Dashboard', active: true, path:'/' },
+    { icon: <Wallet size={20} />, label: 'Mes Comptes', active: false, path:'/' },
+    { icon: <ArrowUpRight size={20} />, label: 'Revenus', active: false, path:'/' },
+    { icon: <ArrowDownLeft size={20} />, label: 'Dépenses', active: false, path:'/' },
+    { icon: <Settings size={20} />, label: 'Paramètres', active: false, path:'/' },
   ];
 
   return (
@@ -22,8 +22,11 @@ const Sidebar = () => {
             key={index} 
             className={`flex items-center gap-3 p-3 rounded-xl cursor-pointer transition-all mb-2 ${item.active ? 'bg-blue-600' : 'hover:bg-slate-800'}`}
           >
-            {item.icon}
+            <a href={item.path} className='flex gap-2'>
+              {item.icon}
             <span className="font-medium">{item.label}</span>
+            </a>
+            
           </div>
         ))}
       </nav>
@@ -37,6 +40,8 @@ const Sidebar = () => {
     </div>
   );
 };
+
+
 
 export default Sidebar;
 

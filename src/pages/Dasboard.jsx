@@ -46,18 +46,21 @@ const Dashboard = () =>{
                     <h2 className='text-xl font-bold text-slate-900 dark:text-white mb-4'>Actions Rapides</h2>
                     <div className='flex gap-4 overflow-x-auto pb-4'>
                         {[
-                            {label : 'Transfert', icon : <Send/>, color: 'bg-orange-500'},
-                             {label : 'Electricite', icon : <Zap/>, color: 'bg-yellow-500'},
-                              {label : 'Television', icon : <Tv/>, color: 'bg-purple-500'},
-                               {label : 'Eau', icon : <Droplets/>, color: 'bg-blue-500'},
-                                {label : 'Abonnement', icon : <CreditCard/>, color: 'bg-pink-500'},
+                            {label : 'Transfert', path:'/transfer', icon : <Send/>, color: 'bg-orange-500'},
+                             {label : 'Electricite', path:'/', icon : <Zap/>, color: 'bg-yellow-500'},
+                              {label : 'Television', path:'/', icon : <Tv/>, color: 'bg-purple-500'},
+                               {label : 'Eau', path:'/', icon : <Droplets/>, color: 'bg-blue-500'},
+                                {label : 'Abonnement',path:'/', icon : <CreditCard/>, color: 'bg-pink-500'},
                         ].map((action, i) => (
                             <button
                                 key={i}
                                 className='flex flex-col items-center gap-2 min-w-[100px]'
                             >
-                                <div className={`${action.color} text-white p-4 rounded-2xl shadow-lg hover:scale-105 active:scale-105 transition-transform`}>{action.icon}</div>
-                                <span className='text-sm font-medium text-slate-600'>{action.label}</span>
+                                <a href={action.path}>
+                                    <div className={`${action.color} text-white p-4 rounded-2xl shadow-lg hover:scale-105 active:scale-105 transition-transform`}>{action.icon}</div>
+                                    <span className='text-sm font-medium text-slate-600'>{action.label}</span>
+                                </a>
+                                
                             </button>
                         ))}
                         
