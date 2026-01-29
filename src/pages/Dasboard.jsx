@@ -1,17 +1,19 @@
 import { CreditCard, Droplets, Send, Tv, Wallet, Zap } from 'lucide-react';
 import StatsCard from '../components/StatsCard';
 import '../index.css'
+import MainChart from '../components/MainChart';
 
 
 const Dashboard = () =>{
     return(
         <>
-            <div>
+            <div className="max-w-6xl mx-auto">
                 <header className='mb-8'>
                     <h1 className='text-2xl font-bold text-slate-900'>Bienvenue, Paul Emmanuel 👋</h1>
                     <p className='text-slate-500'>Voici le résumé de vos activités financières aujourd'hui.</p>
                 </header>
 
+                {/* Cartes de Statistiques */}
                 <div className='grid grid-cols-1 md:grid-cols-3 gap-6'>
                     {/* <div className='h-32 bg-white rounded-2xl shadow-sm border border-slate-100 p-6'> */}
                         <StatsCard
@@ -22,8 +24,25 @@ const Dashboard = () =>{
                             icon={<Wallet size={24}/>}
                         />
                     {/* </div> */}
-                    <div className='h-32 bg-white rounded-2xl shadow-sm border border-slate-100 p-6'>Card 2</div>
-                    <div className='h-32 bg-white rounded-2xl shadow-sm border border-slate-100 p-6'>Card 3</div>
+                    <StatsCard 
+                        title="Revenus" 
+                        amount="850 000 XAF" 
+                        trend={8.2} 
+                        color="bg-emerald-500 text-emerald-500"
+                        icon={<Send size={24} />} 
+                    />
+                    <StatsCard 
+                        title="Dépenses" 
+                        amount="320 000 XAF" 
+                        trend={-4.1} 
+                        color="bg-rose-500 text-rose-500"
+                        icon={<CreditCard size={24} />} 
+                    /> 
+                </div>
+
+                {/* Graphiques d'analyses  */}
+                <div className='mb-10'>
+                    <MainChart/>
                 </div>
 
                 {/* Actions Rapides  */}
