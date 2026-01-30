@@ -4,9 +4,14 @@ import '../index.css'
 import MainChart from '../components/MainChart';
 import TransactionList from '../components/TransactionList';
 import SpendingAnalysis from '../components/SpendingAnalysis';
+import { useState } from 'react';
 
 
 const Dashboard = () =>{
+    const [period, setPeriod] = useState('Semaine');
+
+    const periods = ['Aujourd\'hui', 'Semaine', 'Mois'];
+
     return(
         <>
             <div className="max-w-6xl mx-auto">
@@ -14,6 +19,19 @@ const Dashboard = () =>{
                     <h1 className='text-2xl font-bold text-slate-900 dark:text-white'>Bienvenue, Paul Emmanuel 👋</h1>
                     <p className='text-slate-500'>Voici le résumé de vos activités financières aujourd'hui.</p>
                 </header>
+
+                {/* Sélecteur de période stylé */}
+                <div className='flex bg-slate-100 dark:bg-slate-800 p-1 rounded-2xl w-fit'>
+                    {periods.map((p) => (
+                        <button
+                            key={p}
+                            onClick={() => setPeriod(p)}
+                            className={`px-4 py-2 rounded-xl text-sm font-semibold transition-all ${period === p ? 'bg-white dark:bg-slate-700 text-blue-600 shadow-sm' : 'text-slate-500 hover:text-slate-700 dark:hover:text-slate-300 dark:active:text-slate-300'}`}
+                        >
+                            {p}
+                        </button>
+                    ))}
+                </div>
 
                 {/* Cartes de Statistiques */}
                 <div className='grid grid-cols-2 md:grid-cols-3 gap-6'>
