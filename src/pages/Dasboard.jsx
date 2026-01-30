@@ -21,7 +21,7 @@ const Dashboard = () =>{
                 </header>
 
                 {/* Sélecteur de période stylé */}
-                <div className='flex bg-slate-100 dark:bg-slate-800 p-1 rounded-2xl w-fit'>
+                <div className='flex bg-slate-100 dark:bg-slate-800 p-2 rounded-2xl w-fit mb-4'>
                     {periods.map((p) => (
                         <button
                             key={p}
