@@ -3,6 +3,7 @@ import StatsCard from '../components/StatsCard';
 import '../index.css'
 import MainChart from '../components/MainChart';
 import TransactionList from '../components/TransactionList';
+import SpendingAnalysis from '../components/SpendingAnalysis';
 
 
 const Dashboard = () =>{
@@ -39,6 +40,19 @@ const Dashboard = () =>{
                         color="bg-rose-500 text-white"
                         icon={<CreditCard size={24} />} 
                     /> 
+
+                    
+                </div>
+
+                <div className='space-y-5 mt-10'>
+                        <div className='bg-gradient-to-br dark:from-red-500  from-blue-600 to-indigo-700 p-6 rounded-3xl text-white shadow-xl'>
+                            <p className='text-blue-100 text-sm opacity-80'>Solde Total disponible</p>
+                            <h2 className='text-3xl font-bold mt-1'>2 450 000 XAF</h2>
+                            <div className='mt-8 flex justify-between items-end'>
+                                <div className='text-sm lg:text-2xl'> **** **** **** 4482</div>
+                                <div className='font-bold'>VISA</div>
+                            </div>
+                        </div>
                 </div>
 
                 {/* Actions Rapides  */}
@@ -74,19 +88,9 @@ const Dashboard = () =>{
 
                 <div className='grid grid-cols-1 lg:grid-cols-3 gap-8 mt-8'>
                     <div className='lg:col-span-2'>
-                        <TransactionList/>
+                        <TransactionList/> 
                     </div>
-
-                    <div className='space-y-8 mt-10'>
-                        <div className='bg-gradient-to-br dark:from-red-500  from-blue-600 to-indigo-700 p-6 rounded-3xl text-white shadow-xl'>
-                            <p className='text-blue-100 text-sm opacity-80'>Solde Total disponible</p>
-                            <h2 className='text-3xl font-bold mt-1'>2 450 000 XAF</h2>
-                            <div className='mt-8 flex justify-between items-end'>
-                                <div className='text-sm'> **** **** **** 4482</div>
-                                <div className='font-bold'>VISA</div>
-                            </div>
-                        </div>
-                    </div>
+                    <SpendingAnalysis/>
                     
                 </div>
 
