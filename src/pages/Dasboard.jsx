@@ -5,6 +5,7 @@ import MainChart from '../components/MainChart';
 import TransactionList from '../components/TransactionList';
 import SpendingAnalysis from '../components/SpendingAnalysis';
 import { useState } from 'react';
+import QuickSend from '../components/QuickSend';
 
 
 const Dashboard = () =>{
@@ -104,6 +105,10 @@ const Dashboard = () =>{
                     <MainChart/>
                 </div>
 
+                {/* Contact Favoris  */}
+                <QuickSend/>
+
+                {/* Transactions  */}
                 <div className='grid grid-cols-1 lg:grid-cols-3 gap-8 mt-8'>
                     <div className='lg:col-span-2'>
                         <TransactionList/> 
