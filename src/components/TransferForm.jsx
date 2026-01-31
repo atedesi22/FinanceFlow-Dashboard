@@ -15,6 +15,16 @@ const TransferForm = () => {
     }, 3000);
   }
 
+  const location = useLocation();
+  const [recipient, setRecipient] = useState("");
+
+  useEffect(() => {
+    // Si on vient d'un clic sur QuickSend, on remplit le champ
+    if (location.state && location.state.recipientName) {
+      setRecipient(location.state.recipientName);
+    }
+  }, [location.state]);
+
   
   return (
     <>
@@ -53,6 +63,8 @@ const TransferForm = () => {
             <div className="relative">
               <input 
                 type="text" 
+                value={recipient}
+                onChange={(e) => setRecipient(e.target.value)}
                 placeholder={method === 'bank' ? "Ex: CM21 10001..." : "Ex: 6xx xxx xxx"}
                 className="w-full bg-slate-50 dark:bg-slate-900 border-none rounded-2xl py-4 px-5 focus:ring-2 focus:ring-blue-500 outline-none transition-all text-slate-900 dark:text-white"
               />
