@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Send, Smartphone, Landmark, ChevronRight, CheckCircle2, Loader2 } from 'lucide-react';
 import { useLocation } from 'react-router-dom';
 
