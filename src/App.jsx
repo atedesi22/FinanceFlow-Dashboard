@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import Transactions from './pages/Tansactions';
 import DashboardLayout from './layouts/DashboardLayout';
 import Transfert from './pages/Transfer';
+import Profile from './pages/Profile';
 
 function App() {
 
@@ -17,6 +18,8 @@ function App() {
             <Route path="/" element={<Dashboard/>} />
             <Route path='transactions' element={<Transactions/>}/>
             <Route path="transfert" element={<Transfert />} />
+            <Route path="transfert/:contactName" element={<Transfert />} />
+            <Route path="profile" element={<Profile />} />
           </Route>
           
           {/* Redirection si la page n'existe pas */}

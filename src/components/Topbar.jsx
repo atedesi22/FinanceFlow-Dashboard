@@ -1,5 +1,6 @@
 import { Bell, Menu, Moon, Sun } from "lucide-react";
 import { useDarkMode } from "../hooks/useDarkMode";
+import { Link } from "react-router-dom";
 
 const Topbar = ({onMenuClick}) =>{
 
@@ -26,7 +27,9 @@ const Topbar = ({onMenuClick}) =>{
                         {theme === 'dark' ? <Moon size={20}/> : <Sun size={20}/>}
                     </button>
                     <Bell size={20} className="text-slate-400" />
-                <div className="w-8 h-8 bg-slate-200 rounded-full border border-white shadow-sm"></div>
+                <Link to="/profile" className="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center text-white font-bold hover:scale-105 transition-transform">
+                    PE
+                </Link>
             </div>
         </div>
         </>
