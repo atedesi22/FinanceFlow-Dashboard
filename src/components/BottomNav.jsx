@@ -10,7 +10,7 @@ const BottomNav = () => {
                 <Home size={24} />
                 <span className="text-[10px] font-medium">Accueil</span>
             </a>
-            <a href="transfert" className="flex flex-col items-center text-slate-400">
+            <a href="/transfert" className="flex flex-col items-center text-slate-400">
                 <Send size={24} />
                 <span className="text-[10px] font-medium">Transfert</span>
             </a>

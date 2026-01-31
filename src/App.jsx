@@ -16,10 +16,10 @@ function App() {
         <Routes>
           <Route path='/' element={<DashboardLayout/>}>
             <Route path="/" element={<Dashboard/>} />
-            <Route path='transactions' element={<Transactions/>}/>
-            <Route path="transfert" element={<Transfert />} />
-            <Route path="transfert/:contactName" element={<Transfert />} />
-            <Route path="profile" element={<Profile />} />
+            <Route path='/transactions' element={<Transactions/>}/>
+            <Route path="/transfert" element={<Transfert />} />
+            <Route path="/transfert/:contactName" element={<Transfert />} />
+            <Route path="/profile" element={<Profile />} />
           </Route>
           
           {/* Redirection si la page n'existe pas */}
