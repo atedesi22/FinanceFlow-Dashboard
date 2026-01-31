@@ -1,4 +1,5 @@
 import { LayoutDashboard, Wallet, ArrowUpRight, ArrowDownLeft, Settings, LogOut } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Sidebar = () => {
   const menuItems = [
@@ -22,10 +23,10 @@ const Sidebar = () => {
             key={index} 
             className={`flex items-center gap-3 p-3 rounded-xl cursor-pointer transition-all mb-2 ${item.active ? 'bg-blue-600' : 'hover:bg-slate-800'}`}
           >
-            <a href={item.path} className='flex gap-2'>
+            <Link to={item.path} className='flex gap-2'>
               {item.icon}
             <span className="font-medium">{item.label}</span>
-            </a>
+            </Link>
             
           </div>
         ))}

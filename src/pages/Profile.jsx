@@ -1,5 +1,6 @@
 import { Bell, ChevronRight, CreditCard, LogOut, ShieldCheck, User } from "lucide-react"
 import { useState } from "react";
+import SecurityActivity from "../components/SecurityActivity";
 
 
 
@@ -88,6 +89,7 @@ const Profile  = () => {
                 </div>
             )}
                 
+                <SecurityActivity/>
                 
                 <button className="w-full mt-10 flex items-center justify-center gap-2 p-4 text-red-500 font-bold hover:bg-red-50 dark:hover:bg-red-900/20 rounded-2xl transition-all">
                     <LogOut size={20}/>Déconnexion
