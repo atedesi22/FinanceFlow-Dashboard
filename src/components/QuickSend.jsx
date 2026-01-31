@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 
 const quickContacts = [
     { id: 1, name: 'Maman', img: 'https://ui-avatars.com/api/?name=Maman&bg=fef3c7&color=b45309' },
@@ -7,6 +8,12 @@ const quickContacts = [
 ];
 
 const QuickSend = () =>{
+    const navigate = useNavigate();
+
+    const handleQuickTransfer = (name) => {
+        // On redirige vers le transfert en passant le nom dans le "state"
+        navigate('/transfert', { state: {recipientName: name}});
+    }
     return(
         <>
             <div className="mt-10">
@@ -20,7 +27,10 @@ const QuickSend = () =>{
                     {/* Liste des favoris  */}
                     {quickContacts.map((contact) => (
                         <div key={contact.id} className="flex-shrink-0 flex flex-col items-center gap-2 cursor-pointer group">
-                            <div className="w-16 h-16 rounded-2xl overflow-hidden ring-2 ring-transparent group-hover:ring-blue-500 transition-all p-0.5">
+                            <div
+                                key={contact.id} 
+                                onClick={() => handleQuickTransfer(contact.name)}
+                                className="w-16 h-16 rounded-2xl overflow-hidden ring-2 ring-transparent group-hover:ring-blue-500 transition-all p-0.5">
                             <img src={contact.img} alt={contact.name} className="w-full h-full rounded-[14px] object-cover" />
                             </div>
                             <span className="text-xs font-medium text-slate-600 dark:text-slate-400">{contact.name}</span>
