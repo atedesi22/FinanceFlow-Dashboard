@@ -18,7 +18,7 @@ const BottomNav = () => {
                 <PieChart size={24} />
                 <span className="text-[10px] font-medium">Stats</span>
             </a>
-            <a href className="flex flex-col items-center text-slate-400">
+            <a href='/profile' className="flex flex-col items-center text-slate-400">
                 <User size={24} />
                 <span className="text-[10px] font-medium">Profil</span>
             </a>
