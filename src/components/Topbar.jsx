@@ -14,7 +14,7 @@ const Topbar = ({onMenuClick}) =>{
         <>
         <div className="h-16 bg-white dark:bg-slate-800 border-b border-slate-100 px-6 flex justify-between items-center sticky top-0 z-40">
             <div className="flex items-center gap-2 lg:hidden">
-                <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold">F</div>
+                <Link to='/' className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold">F</Link>
                 <span className="font-bold text-slate-900 dark:text-white">FinanceFlow</span>
             </div>
             
