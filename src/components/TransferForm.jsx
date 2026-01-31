@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Send, Smartphone, Landmark, ChevronRight, CheckCircle2, Loader2 } from 'lucide-react';
+import { useLocation } from 'react-router-dom';
 
 const TransferForm = () => {
   const [method, setMethod] = useState('momo'); // momo, om, bank
