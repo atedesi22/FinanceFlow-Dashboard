@@ -6,12 +6,15 @@ import TransactionList from '../components/TransactionList';
 import SpendingAnalysis from '../components/SpendingAnalysis';
 import { useState } from 'react';
 import QuickSend from '../components/QuickSend';
+import { useNavigate } from 'react-router-dom';
 
 
 const Dashboard = () =>{
     const [period, setPeriod] = useState('Semaine');
 
     const periods = ['Aujourd\'hui', 'Semaine', 'Mois'];
+
+    const navigate = useNavigate();
 
     return(
         <>
@@ -36,15 +39,17 @@ const Dashboard = () =>{
 
                 {/* Cartes de Statistiques */}
                 <div className='grid grid-cols-2 md:grid-cols-3 gap-6'>
-                    {/* <div className='h-32 bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-100 p-6'> */}
+                    <div onClick={() => navigate('/wallet')} 
+                        className="cursor-pointer active:scale-95 transition-transform">
                         <StatsCard
                             title='Solde Total'
                             amount='2 450 000 XAF'
                             trend={12.5}
                             color='bg-blue-600 text-white'
                             icon={<Wallet size={24}/>}
+                            
                         />
-                    {/* </div> */}
+                    </div>
                     <StatsCard 
                         title="Revenus" 
                         amount="850 000 XAF" 

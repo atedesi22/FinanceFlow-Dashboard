@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Sidebar = () => {
   const menuItems = [
     { icon: <LayoutDashboard size={20} />, label: 'Dashboard', active: true, path:'/' },
-    { icon: <Wallet size={20} />, label: 'Mes Comptes', active: false, path:'/' },
+    { icon: <Wallet size={20} />, label: 'Mes Comptes', active: false, path:'/wallet' },
     { icon: <ArrowUpRight size={20} />, label: 'Revenus', active: false, path:'/' },
     { icon: <ArrowDownLeft size={20} />, label: 'Dépenses', active: false, path:'/' },
     { icon: <Settings size={20} />, label: 'Paramètres', active: false, path:'/' },

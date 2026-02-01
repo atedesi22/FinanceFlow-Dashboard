@@ -7,6 +7,8 @@ import Transactions from './pages/Tansactions';
 import DashboardLayout from './layouts/DashboardLayout';
 import Transfert from './pages/Transfer';
 import Profile from './pages/Profile';
+import NovaWallet from './components/NovaWallet';
+import Stats from './pages/Stats';
 
 function App() {
 
@@ -16,10 +18,12 @@ function App() {
         <Routes>
           <Route path='/' element={<DashboardLayout/>}>
             <Route path="/" element={<Dashboard/>} />
+            <Route path="/wallet" element={<NovaWallet />} />
             <Route path='/transactions' element={<Transactions/>}/>
             <Route path="/transfert" element={<Transfert />} />
             <Route path="/transfert/:contactName" element={<Transfert />} />
             <Route path="/profile" element={<Profile />} />
+            <Route path="/stats" element={<Stats />} />
           </Route>
           
           {/* Redirection si la page n'existe pas */}

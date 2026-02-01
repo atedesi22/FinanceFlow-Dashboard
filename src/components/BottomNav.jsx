@@ -1,5 +1,5 @@
 // src/components/BottomNav.jsx
-import { Home, Send, PieChart, User } from "lucide-react";
+import { Home, Send, PieChart, User, Wallet } from "lucide-react";
 import { useLocation } from "react-router-dom";
 
 const BottomNav = () => {
@@ -10,14 +10,20 @@ const BottomNav = () => {
                 <Home size={24} />
                 <span className="text-[10px] font-medium">Accueil</span>
             </a>
+            <a href='/stats' className="flex flex-col items-center text-slate-400">
+                <PieChart size={24} />
+                <span className="text-[10px] font-medium">Stats</span>
+            </a>
+            <a href="/wallet" className="flex flex-col items-center text-slate-400">
+                <Wallet size={24} />
+                <span className="text-[10px] font-medium">Wallet</span>
+            </a>
             <a href="/transfert" className="flex flex-col items-center text-slate-400">
                 <Send size={24} />
                 <span className="text-[10px] font-medium">Transfert</span>
             </a>
-            <a className="flex flex-col items-center text-slate-400">
-                <PieChart size={24} />
-                <span className="text-[10px] font-medium">Stats</span>
-            </a>
+            
+            
             <a href='/profile' className="flex flex-col items-center text-slate-400">
                 <User size={24} />
                 <span className="text-[10px] font-medium">Profil</span>
