@@ -8,6 +8,7 @@ import { useState } from 'react';
 import QuickSend from '../components/QuickSend';
 import { useNavigate } from 'react-router-dom';
 import PWAInstaller from '../components/PWAInstaller';
+import NovaHub from './NovaHub'; // Importe ton nouveau fichier
 
 
 const Dashboard = () =>{
@@ -17,10 +18,14 @@ const Dashboard = () =>{
 
     const navigate = useNavigate();
 
+    const [activeTab, setActiveTab] = useState('home');
+
     return(
         <>
         
             <div className="max-w-6xl mx-auto">
+                
+                
                 <header className='mb-8'>
                     <h1 className='text-2xl font-bold text-slate-900 dark:text-white'>Bienvenue, Paul Emmanuel 👋</h1>
                     <p className='text-slate-500'>Voici le résumé de vos activités financières aujourd'hui.</p>
@@ -88,13 +93,14 @@ const Dashboard = () =>{
                     <div className='flex gap-4 overflow-x-auto pb-4'>
                         {[
                             {label : 'Transfert', path:'transfert', icon : <Send/>, color: 'bg-orange-500'},
-                             {label : 'Electricite', path:'/', icon : <Zap/>, color: 'bg-yellow-500'},
-                              {label : 'Television', path:'/', icon : <Tv/>, color: 'bg-purple-500'},
-                               {label : 'Eau', path:'/', icon : <Droplets/>, color: 'bg-blue-500'},
-                                {label : 'Abonnement',path:'/', icon : <CreditCard/>, color: 'bg-pink-500'},
+                             {label : 'Electricite', path:'/hub', icon : <Zap/>, color: 'bg-yellow-500'},
+                              {label : 'Television', path:'/hub', icon : <Tv/>, color: 'bg-purple-500'},
+                               {label : 'Eau', path:'/hub', icon : <Droplets/>, color: 'bg-blue-500'},
+                                {label : 'Abonnement',path:'/hub', icon : <CreditCard/>, color: 'bg-pink-500'},
                         ].map((action, i) => (
                             <button
                                 key={i}
+                                onClick={() => navigate(action.path)} // Utilise navigate ici !
                                 className='flex flex-col items-center gap-2 min-w-[100px]'
                             >
                                 <a href={action.path}>

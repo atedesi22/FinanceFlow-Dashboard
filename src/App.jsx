@@ -9,6 +9,7 @@ import Transfert from './pages/Transfer';
 import Profile from './pages/Profile';
 import NovaWallet from './components/NovaWallet';
 import Stats from './pages/Stats';
+import NovaHub from './pages/NovaHub';
 
 function App() {
 
@@ -24,6 +25,7 @@ function App() {
             <Route path="/transfert/:contactName" element={<Transfert />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/stats" element={<Stats />} />
+            <Route path='/hub' element={<NovaHub/>}/>
           </Route>
           
           {/* Redirection si la page n'existe pas */}
