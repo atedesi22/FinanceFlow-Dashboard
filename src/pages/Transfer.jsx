@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import TransferForm from '../components/TransferForm'; // Assure-toi que le chemin est correct
 import { ArrowLeft } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import Beneficiaries from '../components/Beneficiaries';
+
 
 const Transfer = () => {
   const navigate = useNavigate();
+  const [selectedContact, setSelectedContact] = useState(null);
 
   return (
     <div className="p-4 bg-gray-50 dark:bg-slate-900 min-h-screen pb-24">
@@ -19,8 +22,12 @@ const Transfer = () => {
         <h1 className="text-xl font-bold text-slate-900 dark:text-white">Transactions</h1>
       </div>
 
+      <Beneficiaries onSelect={(contact) => setSelectedContact(contact)} />
       {/* Appel du formulaire fusionné */}
-      <TransferForm />
+      <TransferForm 
+  key={selectedContact ? selectedContact.id : 'empty'} 
+  initialData={selectedContact} 
+/>
       
       {/* Petit texte d'info NovaVerse sous le formulaire */}
       <p className="mt-6 text-[10px] text-center text-slate-400 font-medium px-8 italic">

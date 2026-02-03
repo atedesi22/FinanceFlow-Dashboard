@@ -1,0 +1,46 @@
+📑 DOCUMENTATION : NovaVerse UI Template (v1.0)Projet :
+
+ NovaVerse – Fintech PanafricaineAuteur : Atedesi Bohole Paul Emmanuel
+ 
+ Sprint : Semaine 1 (Design & Frontend Logic)Statut : Terminé / Prêt pour Backend🎨 
+ 
+ 1. Design System & UXConcept : "Obsolète mais nécessaire". 
+ 
+ Utiliser les réseaux existants (MoMo/OM/Wave) pour construire une couche d'intelligence supérieure (NovaVault).
+ 
+ Style : Mobile-First, coins ultra-arrondis (rounded-[2.5rem]),thèmes adaptatifs (Light/Dark).
+ Composants clés :NovaVault : Affichage sécurisé du solde.
+ CountryModal : Sélecteur de pays avec barre de recherche (Scalable pour +100 pays).
+ BeneficiaryBar : Accès rapide aux favoris avec injection de données automatique.⚙️ 
+ 
+ 2. Moteur de Calcul (FeeEngine)
+ 
+ Le template intègre une logique de frais dynamique pour garantir la transparence avant validation :
+ Transfert Interne (Nova -> Nova) : 0.5\%$.
+ Envoi Externe (Mobile Money tiers) : 4.0\%$.
+ Retrait Kiosque (Cash-out) : 4.0\%$.
+ Virement Bancaire : 4.0\%$.
+ Note technique : Les calculs utilisent parseFloat et toLocaleString pour éviter les erreurs de type NaN et assurer un affichage monétaire propre (XAF/XOF).
+ 
+ 📂 3. Architecture du CodePlaintextsrc/
+ ├── components/
+ │    ├── Beneficiaries.jsx  # Gestion des favoris & pré-remplissage
+ │    ├── TransferForm.jsx   # Formulaire dynamique & calcul des frais
+ │    └── BottomNav.jsx      # Navigation principale
+ ├── pages/
+ │    ├── Home.jsx           # Dashboard & NovaVault
+ │    └── Transfer.jsx       # Conteneur principal des transactions
+ └── data/
+      └── countryConfigs.js  # Base de données des opérateurs par pays
+
+🔗 4. État de Connexion (Frontend Workflow)L'utilisateur sélectionne un pays via la Modal de recherche.
+
+L'interface adapte les logos (MTN, Orange, Wave, Free, etc.) dynamiquement.Un clic sur un Bénéficiaire déclenche un useEffect qui pré-remplit les champs.
+La saisie du montant déclenche le calcul en temps réel du Total à débiter.
+
+🚀 5. Roadmap Semaine 2 (Backend Laravel)Dès demain, nous passerons à la phase Projet.
+
+ Voici ce qui est prévu :Migration DB : Création des tables users, wallets et transactions.
+ API REST : Endpoints pour l'initiation des transferts et la validation des soldes.
+ 
+ Sécurité : Gestion des tokens JWT et validation des frais côté serveur (Laravel) pour éviter les fraudes.

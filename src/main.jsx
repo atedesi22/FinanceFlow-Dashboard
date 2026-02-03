@@ -8,3 +8,11 @@ createRoot(document.getElementById('root')).render(
     <App />
   </StrictMode>,
 )
+
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/serviceWorker.js')
+      .then(reg => console.log('NovaVerse SW enregistré !', reg))
+      .catch(err => console.log('Erreur SW', err));
+  });
+}

@@ -3,7 +3,7 @@ import { Landmark, ChevronRight, CheckCircle2, Loader2, User, Store, Smartphone,
 import { useLocation } from 'react-router-dom';
 import { countryConfigs } from '../data/operators';
 
-const TransferForm = () => {
+const TransferForm = ({initialData}) => {
   const [country, setCountry] = useState('CM');
   const [type, setType] = useState('send'); 
   const [method, setMethod] = useState('momo'); 
@@ -52,16 +52,6 @@ const filteredCountries = Object.keys(countryConfigs).filter(code =>
   code.toLowerCase().includes(searchCountry.toLowerCase())
 );
 
-// // 1. Trouver l'opérateur sélectionné pour avoir son taux de frais
-// const selectedOp = countryConfigs[country].operators.find(op => op.id === method);
-
-// // 2. Calculer les frais (Montant * (Taux / 100))
-// const calculatedFees = amount ? (parseFloat(amount) * (selectedOp.feesPercent / 100)) : 0.5;
-
-// // 3. Calculer le total à débiter
-// const totalToPay = amount ? (parseFloat(amount) + calculatedFees) : 0.5;
-
-
 const NOVA_GLOBAL_FEES = {
   INTERNAL: 0.5,           // NovaVerse à NovaVerse (Partout dans le monde)
   MOBILE_CASH_OUT: 4,  // Tout retrait via Mobile Money (Cameroun, Sénégal, CI, etc.)
@@ -97,6 +87,17 @@ const cleanAmount = amount === "" ? 0 : parseFloat(amount);
 const calculatedFees = cleanAmount * (currentFeeRate / 100);
 const totalToPay = cleanAmount + calculatedFees;
 
+
+useEffect(() => {
+  if (initialData) {
+    console.log("Données reçues :", initialData); // Ajoute ce log pour voir ce qui arrive
+    setRecipient(initialData.phone || initialData.name || "");
+    
+    if (initialData.countryCode) {
+      setCountry(initialData.countryCode);
+    }
+  }
+}, [initialData]);
 
   return (
     <>

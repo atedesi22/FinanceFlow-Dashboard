@@ -7,6 +7,7 @@ import SpendingAnalysis from '../components/SpendingAnalysis';
 import { useState } from 'react';
 import QuickSend from '../components/QuickSend';
 import { useNavigate } from 'react-router-dom';
+import PWAInstaller from '../components/PWAInstaller';
 
 
 const Dashboard = () =>{
@@ -18,11 +19,13 @@ const Dashboard = () =>{
 
     return(
         <>
+        
             <div className="max-w-6xl mx-auto">
                 <header className='mb-8'>
                     <h1 className='text-2xl font-bold text-slate-900 dark:text-white'>Bienvenue, Paul Emmanuel 👋</h1>
                     <p className='text-slate-500'>Voici le résumé de vos activités financières aujourd'hui.</p>
                 </header>
+                
 
                 {/* Sélecteur de période stylé */}
                 <div className='flex bg-slate-100 dark:bg-slate-800 p-2 rounded-2xl w-fit mb-4'>
@@ -122,7 +125,7 @@ const Dashboard = () =>{
                     
                 </div>
 
-                
+                <PWAInstaller/>
             </div>
         </>
     )
